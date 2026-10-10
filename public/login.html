@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopFlow E-Commerce - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav aria-label="Main navigation">
+    <a class="logo" href="index.html">ShopFlow</a>
+    <a href="index.html"><span id="navHomeText">Home</span></a>
+    <a href="products.html"><span id="navProductsText">Products</span></a>
+    <a href="shoppingCart.html"><span id="navCartText">Shopping Cart</span></a>
+    <a href="tracking.html"><span id="navTrackingText">Track Order</span></a>
+    <!-- Admin Restricted Nav Links -->
+    <a href="stock.html" class="admin-only"><span id="navStockText">Stock</span></a>
+    <a href="orders.html" class="admin-only"><span id="navOrdersText">Orders</span></a>
+
+    <a href="login.html" aria-current="page"><span id="navLoginText">Login</span></a>
+  </nav>
+</header>
+
+<main>
+  <section id="login">
+    <h2 id="loginTitle" style="text-align: center; margin-bottom: 20px;">Account Access</h2>
+
+    <!-- Language & Currency Region Preferences -->
+    <div class="card">
+      <div class="form-group">
+        <label for="languageSelect" id="lblLanguage">Select Preferred Language:</label>
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="ms">Bahasa Melayu (Malay)</option>
+          <option value="es">Español (Spanish)</option>
+          <option value="zh">中文 (Chinese)</option>
+        </select>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 0;">
+        <label for="currencySelect" id="lblCurrency">Select Region & Currency:</label>
+        <select id="currencySelect">
+          <option value="USD">United States (USD - $)</option>
+          <option value="MYR">Malaysia (MYR - RM)</option>
+          <option value="EUR">Eurozone (EUR - €)</option>
+          <option value="CNY">China (CNY - ¥)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="card">
+      <h3 style="margin-top: 0; margin-bottom: 15px;">Login</h3>
+      
+      <div class="form-group">
+        <label id="lblUser" for="username">Username</label>
+        <input id="username" type="text" required placeholder="Enter username">
+      </div>
+
+      <div class="form-group">
+        <label id="lblPass" for="password">Password</label>
+        <input id="password" type="password" required placeholder="Enter password">
+      </div>
+
+      <button type="submit" id="btnLogin">Login</button>
+    </form>
+
+<!-- Registration Form -->
+<form id="registerForm" class="card">
+  <h3 id="regTitle" style="margin-top: 0; margin-bottom: 15px;">Register New Account</h3>
+  
+  <div class="form-group">
+    <label id="lblRegUser" for="regUsername">Username</label>
+    <input id="regUsername" type="text" required placeholder="Choose a username">
+  </div>
+
+  <div class="form-group">
+    <label id="lblRegPass" for="regPassword">Password</label>
+    <input id="regPassword" type="password" required placeholder="Choose a password (min 6 chars)">
+  </div>
+
+  <div class="form-group">
+    <label id="lblRegRole" for="regRole">Account Type</label>
+    <select id="regRole">
+      <option id="optRoleUser" value="user" selected>Customer (Standard User)</option>
+      <option id="optRoleAdmin" value="admin">Administrator</option>
+    </select>
+  </div>
+
+  <button type="submit" id="btnRegister">Register Account</button>
+</form>
+
+<!-- Logged-in User Session Panel & Logout Button -->
+<section id="userSessionCard" class="card" style="display: none; text-align: center;">
+  <h3 id="sessionTitle" style="margin-top: 0;">Account Overview</h3>
+  <p><span id="lblLoggedInAs">Logged in as</span>: <strong id="loggedInUsername"></strong> (<span id="loggedInRole"></span>)</p>
+  <button id="btnLogout" style="background-color: #d9534f; color: white; margin-top: 10px;">
+    Logout Account
+  </button>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 ShopFlow E-Commerce</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
